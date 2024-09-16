@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -89,8 +90,15 @@ int main() {
     int P;
     cin >> P;
 
+    cin.ignore(); // ingore newline character
+
     string movements;
-    cin >> movements;
+    // cin >> movements;
+    // menggunakan get line 
+    getline(cin, movements);
+
+    // Menghapus semua spasi dari string movements
+    movements.erase(remove(movements.begin(), movements.end(), ' '), movements.end());
 
     for (char move : movements) {
         robot.move(move, map);
