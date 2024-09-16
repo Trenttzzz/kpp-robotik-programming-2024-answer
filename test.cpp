@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <cstdlib>
 
 using namespace std;
 
@@ -37,6 +38,7 @@ public:
                 processCell(map[y][x]);
             } else {
                 cout << "Robot nabrak, silahkan diperbaiki" << endl;
+                exit(1); // exit with error code 1
             }
         }
     }
@@ -90,6 +92,7 @@ int main() {
     int P;
     cin >> P;
 
+    cin.ignore(); // ingore newline character
     cin.ignore(); // ingore newline character
 
     string movements;
