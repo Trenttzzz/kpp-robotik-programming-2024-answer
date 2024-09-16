@@ -38,7 +38,7 @@ public:
                 processCell(map[y][x]);
             } else {
                 cout << "Robot nabrak, silahkan diperbaiki" << endl;
-                exit(1); // exit with error code 1
+                // exit(1); // exit with error code 1
             }
         }
     }
@@ -101,13 +101,13 @@ int main() {
     getline(cin, movements);
 
     // Debugging: Menampilkan string movements sebelum dihapus spasinya
-    cout << "Input string sebelum dihapus spasi: '" << movements << "'" << endl;
+    // cout << "Input string sebelum dihapus spasi: '" << movements << "'" << endl;
 
     // Menghapus semua spasi dari string movements
     movements.erase(remove(movements.begin(), movements.end(), ' '), movements.end());
 
     // Debugging: Menampilkan string movements setelah dihapus spasinya
-    cout << "Input string setelah dihapus spasi: '" << movements << "'" << endl;
+    // cout << "Input string setelah dihapus spasi: '" << movements << "'" << endl;
 
     for (char move : movements) {
         robot.move(move, map);
